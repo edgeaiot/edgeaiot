@@ -25,7 +25,7 @@ I offer bespoke embedded software development services for ARM Cortex M/R/A proc
 </h4/>
 </h3>
 
-![C](https://img.shields.io/badge/c-%2300599C.svg?style=for-the-badge&logo=c&logoColor=white)![CMake](https://img.shields.io/badge/CMake-%23008FBA.svg?style=for-the-badge&logo=cmake&logoColor=white)![C++](https://img.shields.io/badge/c++-%2300599C.svg?style=for-the-badge&logo=c%2B%2B&logoColor=white)![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)![Arduino](https://img.shields.io/badge/-Arduino-00979D?style=for-the-badge&logo=Arduino&logoColor=white)![Raspberry Pi](https://img.shields.io/badge/-RaspberryPi-C51A4A?style=for-the-badge&logo=Raspberry-Pi)![Zigbee](https://img.shields.io/badge/zigbee-%23EB0443.svg?style=for-the-badge&logo=zigbee&logoColor=white)![AWS](https://img.shields.io/badge/AWS-%23FF9900.svg?style=for-the-badge&logo=amazon-aws&logoColor=white)![Azure](https://img.shields.io/badge/azure-%230072C6.svg?style=for-the-badge&logo=microsoftazure&logoColor=white)![TensorFlow](https://img.shields.io/badge/TensorFlow-%23FF6F00.svg?style=for-the-badge&logo=TensorFlow&logoColor=white)![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)![InfluxDB](https://img.shields.io/badge/InfluxDB-22ADF6?style=for-the-badge&logo=InfluxDB&logoColor=white)![RabbitMQ](https://img.shields.io/badge/rabbitmq-FF6600?style=for-the-badge&logo=rabbitmq&logoColor=white)
+![C](https://img.shields.io/badge/c-%2300599C.svg?style=for-the-badge&logo=c&logoColor=white)![CMake](https://img.shields.io/badge/CMake-%23008FBA.svg?style=for-the-badge&logo=cmake&logoColor=white)![C++](https://img.shields.io/badge/c++-%2300599C.svg?style=for-the-badge&logo=c%2B%2B&logoColor=white)![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)![Arduino](https://img.shields.io/badge/-Arduino-00979D?style=for-the-badge&logo=Arduino&logoColor=white)![Raspberry Pi](https://img.shields.io/badge/-RaspberryPi-C51A4A?style=for-the-badge&logo=Raspberry-Pi)![Zigbee](https://img.shields.io/badge/zigbee-%23EB0443.svg?style=for-the-badge&logo=zigbee&logoColor=white)![AWS](https://img.shields.io/badge/AWS-%23FF9900.svg?style=for-the-badge&logo=amazon-aws&logoColor=white)![Azure](https://img.shields.io/badge/azure-%230072C6.svg?style=for-the-badge&logo=microsoftazure&logoColor=white)![TensorFlow](https://img.shields.io/badge/TensorFlow-%23FF6F00.svg?style=for-the-badge&logo=TensorFlow&logoColor=white)![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)![InfluxDB](https://img.shields.io/badge/InfluxDB-22ADF6?style=for-the-badge&logo=InfluxDB&logoColor=white)![RabbitMQ](https://img.shields.io/badge/rabbitmq-FF6600?style=for-the-badge&logo=rabbitmq&logoColor=white)![IoT](https://img.shields.io/badge/IoT-00979D?style=for-the-badge&logoColor=white)![FPGA](https://img.shields.io/badge/FPGA-0099CC?style=for-the-badge&logoColor=white)![Verilog](https://img.shields.io/badge/Verilog-CC0000?style=for-the-badge&logoColor=white)![DSP](https://img.shields.io/badge/DSP-FF6600?style=for-the-badge&logoColor=white)![RTOS](https://img.shields.io/badge/RTOS-00599C?style=for-the-badge&logoColor=white)![ARM](https://img.shields.io/badge/ARM-0091BD?style=for-the-badge&logo=arm&logoColor=white)![ESP32](https://img.shields.io/badge/ESP32-E7352C?style=for-the-badge&logo=espressif&logoColor=white)![STM32](https://img.shields.io/badge/STM32-03234B?style=for-the-badge&logo=stmicroelectronics&logoColor=white)
 </h3>
 </div>
 </td>
@@ -51,15 +51,15 @@ I offer bespoke embedded software development services for ARM Cortex M/R/A proc
 <div align="center">
   
 <!-- REPO_1_START -->
-[![esp32--CAM-Arduino-IDE](https://github-readme-stats.vercel.app/api/pin/?username=edgeaiot&repo=esp32--CAM-Arduino-IDE&theme=dark&hide_border=true)](https://github.com/edgeaiot/esp32--CAM-Arduino-IDE)
+[![Repo Name](https://github-readme-stats.vercel.app/api/pin/?username=YOUR_USERNAME&repo=REPO_NAME&theme=dark&hide_border=true)](https://github.com/YOUR_USERNAME/REPO_NAME)
 <!-- REPO_1_END -->
   
 <!-- REPO_2_START -->
-[![esp_ble](https://github-readme-stats.vercel.app/api/pin/?username=edgeaiot&repo=esp_ble&theme=dark&hide_border=true)](https://github.com/edgeaiot/esp_ble)
+[![Repo Name](https://github-readme-stats.vercel.app/api/pin/?username=YOUR_USERNAME&repo=REPO_NAME&theme=dark&hide_border=true)](https://github.com/YOUR_USERNAME/REPO_NAME)
 <!-- REPO_2_END -->
   
 <!-- REPO_3_START -->
-[![edgeaiot](https://github-readme-stats.vercel.app/api/pin/?username=edgeaiot&repo=edgeaiot&theme=dark&hide_border=true)](https://github.com/edgeaiot/edgeaiot)
+[![Repo Name](https://github-readme-stats.vercel.app/api/pin/?username=YOUR_USERNAME&repo=REPO_NAME&theme=dark&hide_border=true)](https://github.com/YOUR_USERNAME/REPO_NAME)
 <!-- REPO_3_END -->
 
 </div>
@@ -69,7 +69,7 @@ I offer bespoke embedded software development services for ARM Cortex M/R/A proc
 <div align="center">
   
 <!-- REPO_4_START -->
-[![alert-system](https://github-readme-stats.vercel.app/api/pin/?username=edgeaiot&repo=alert-system&theme=dark&hide_border=true)](https://github.com/edgeaiot/alert-system)
+[![Repo Name](https://github-readme-stats.vercel.app/api/pin/?username=YOUR_USERNAME&repo=REPO_NAME&theme=dark&hide_border=true)](https://github.com/YOUR_USERNAME/REPO_NAME)
 <!-- REPO_4_END -->
   
 <!-- REPO_5_START -->
