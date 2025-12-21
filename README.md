@@ -1,5 +1,8 @@
 <div align="center">
-<img src="https://readme-typing-svg.herokuapp.com?font=Roboto+Mono&size=35&duration=3000&pause=1000&color=00D9FF&center=true&vCenter=true&width=900&lines=Crafting+High-Performance+Firmware+for+IoT+%26+Embedded+Systems" alt="Typing SVG" />
+<img src="https://readme-typing-svg.herokuapp.com?font=Roboto+Mono&size=35&duration=3000&pause=1000&color=00D9FF&center=true&vCenter=true&width=900&lines=Crafting+High-Performance+Firmware+for+IoT" alt="Typing SVG" />
+</div>
+<div align="center">
+<img src="https://readme-typing-svg.herokuapp.com?font=Roboto+Mono&size=35&duration=3000&pause=1000&color=00D9FF&center=true&vCenter=true&width=900&lines=%26+Embedded+Systems" alt="Typing SVG" />
 </div>
 <table border=0>
 <tr>
