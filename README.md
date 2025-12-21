@@ -17,9 +17,9 @@
 IoT Engineer
 <br/> 
 <h3>
-Design IoT Embedded Systems from PCB to Hardware, Firmware, Cloud IoT with AI.
+Crafting High-Performance Firmware for IoT & Embedded Systems | PCB to Cloud Integration
 <h4>
-I offer bespoke embedded software development services for ARM Cortex M/R/A processors, STM32 microcontrollers, ESP32 modules, nRF52 chips, Raspberry Pi platforms, FPGA configurations, RTOS applications, TinyML models and AWS IoT integrations. Ensure seamless integration with hardware components for optimized performance.
+Specialized firmware engineering from low-level bare-metal code to RTOS-based applications. Expert in ARM Cortex M/R/A architectures, STM32, ESP32, nRF52, and Raspberry Pi development. Delivering optimized firmware solutions with FPGA integration, DSP algorithms, TinyML edge AI, and seamless cloud connectivity via AWS IoT & Azure. Turning hardware concepts into production-ready embedded systems.
 
 <br/>
 </h4/>
