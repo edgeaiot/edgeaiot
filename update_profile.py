@@ -11,19 +11,21 @@ GITHUB_API_BASE = 'https://api.github.com'
 
 def get_top_starred_repos(username: str = None, limit: int = 6) -> List[Dict]:
     """Fetch top starred repositories for a user."""
-    if not GITHUB_TOKEN:
-        raise ValueError("GITHUB_TOKEN environment variable is required")
-    
     headers = {
-        'Authorization': f'Bearer {GITHUB_TOKEN}',
         'Accept': 'application/vnd.github.v3+json',
         'User-Agent': 'GitHub-Profile-Update'
     }
     
-    # If no username provided, get authenticated user's repos
+    # Add token if available (improves rate limits, but not required for public repos)
+    if GITHUB_TOKEN:
+        headers['Authorization'] = f'Bearer {GITHUB_TOKEN}'
+    
+    # If no username provided, get authenticated user's repos (requires token)
     if username:
         endpoint = f'/users/{username}/repos'
     else:
+        if not GITHUB_TOKEN:
+            raise ValueError("GITHUB_TOKEN is required when username is not provided")
         endpoint = '/user/repos'
     
     # Get all repos, sorted by stars
@@ -126,10 +128,19 @@ if __name__ == '__main__':
     import sys
     
     print("Fetching top starred repositories...")
-    username = get_username()
+    
+    # Try to get username from environment (GitHub Actions provides REPO_OWNER)
+    # Otherwise try to get from authenticated user
+    username = os.getenv('REPO_OWNER') or get_username()
+    
+    if not username:
+        print("Error: Could not determine username")
+        sys.exit(1)
+    
     print(f"Fetching repos for: {username}")
     
-    repos = get_top_starred_repos(limit=6)
+    # Use public API endpoint with username
+    repos = get_top_starred_repos(username=username, limit=6)
     print(f"Found {len(repos)} repositories")
     
     # Display top repos
