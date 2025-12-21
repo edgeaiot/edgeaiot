@@ -16,7 +16,6 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write # Needed to commit and push changes
-      repositories: read # Needed to read repository information
     
     steps:
       - name: Checkout repository
