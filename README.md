@@ -54,15 +54,15 @@ Specialized firmware engineering from low-level bare-metal code to RTOS-based ap
 <div align="center">
   
 <!-- REPO_1_START -->
-[![esp32--CAM-Arduino-IDE](https://github-readme-stats.vercel.app/api/pin/?username=edgeaiot&repo=esp32--CAM-Arduino-IDE&theme=dark&hide_border=true)](https://github.com/edgeaiot/esp32--CAM-Arduino-IDE)
+[![edgeaiot](https://github-readme-stats.vercel.app/api/pin/?username=edgeaiot&repo=edgeaiot&theme=dark&hide_border=true)](https://github.com/edgeaiot/edgeaiot)
 <!-- REPO_1_END -->
   
 <!-- REPO_2_START -->
-[![esp_ble](https://github-readme-stats.vercel.app/api/pin/?username=edgeaiot&repo=esp_ble&theme=dark&hide_border=true)](https://github.com/edgeaiot/esp_ble)
+[![esp32--CAM-Arduino-IDE](https://github-readme-stats.vercel.app/api/pin/?username=edgeaiot&repo=esp32--CAM-Arduino-IDE&theme=dark&hide_border=true)](https://github.com/edgeaiot/esp32--CAM-Arduino-IDE)
 <!-- REPO_2_END -->
   
 <!-- REPO_3_START -->
-[![edgeaiot](https://github-readme-stats.vercel.app/api/pin/?username=edgeaiot&repo=edgeaiot&theme=dark&hide_border=true)](https://github.com/edgeaiot/edgeaiot)
+[![esp_ble](https://github-readme-stats.vercel.app/api/pin/?username=edgeaiot&repo=esp_ble&theme=dark&hide_border=true)](https://github.com/edgeaiot/esp_ble)
 <!-- REPO_3_END -->
 
 </div>
