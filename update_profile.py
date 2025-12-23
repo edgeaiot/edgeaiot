@@ -3,6 +3,7 @@ import requests
 import os
 import re
 from typing import List, Dict
+from datetime import datetime
 
 # Get token from environment (GitHub Actions provides GITHUB_TOKEN automatically)
 GITHUB_TOKEN = os.getenv('GITHUB_TOKEN')
@@ -75,14 +76,18 @@ def update_readme(repos: List[Dict], readme_file: str = 'README.md'):
     # Extract username from first repo
     username = repos[0].get('owner', {}).get('login', 'YOUR_USERNAME')
     
+    # Get current date for cache busting (changes daily to force refresh)
+    cache_date = datetime.now().strftime('%Y%m%d')  # Format: YYYYMMDD
+    
     # Update each repository placeholder
     updated = False
     for i, repo in enumerate(repos[:6], 1):
         repo_name = repo.get('name', '')
         repo_url = repo.get('html_url', '')
         
-        # Create GitHub Stats API card
-        card = f'[![{repo_name}](https://github-readme-stats.vercel.app/api/pin/?username={username}&repo={repo_name}&theme=dark&hide_border=true)]({repo_url})'
+        # Create GitHub Stats API card with 1-day cache (86400 seconds)
+        # v parameter forces refresh daily when date changes
+        card = f'[![{repo_name}](https://github-readme-stats.vercel.app/api/pin/?username={username}&repo={repo_name}&theme=dark&hide_border=true&cache_seconds=86400&v={cache_date})]({repo_url})'
         
         # Use regex to find and replace between the comment markers
         pattern = rf'(<!-- REPO_{i}_START -->\s*)\[!\[.*?\]\(.*?\)\]\(.*?\)(\s*<!-- REPO_{i}_END -->)'
