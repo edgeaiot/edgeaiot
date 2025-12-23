@@ -75,7 +75,7 @@ Specialized firmware engineering from low-level bare-metal code to RTOS-based ap
 <!-- REPO_4_END -->
   
 <!-- REPO_5_START -->
-[![Repo Name](https://github-readme-stats.vercel.app/api/pin/?username=YOUR_USERNAME&repo=REPO_NAME&theme=dark&hide_border=true)](https://github.com/YOUR_USERNAME/REPO_NAME)
+[![edge-ai-iot-tool](https://github-readme-stats.vercel.app/api/pin/?username=edgeaiot&repo=edge-ai-iot-tool&theme=dark&hide_border=true)](https://github.com/edgeaiot/edge-ai-iot-tool)
 <!-- REPO_5_END -->
   
 <!-- REPO_6_START -->
