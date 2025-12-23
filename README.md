@@ -53,15 +53,15 @@ Specialized firmware engineering from low-level bare-metal code to RTOS-based ap
 <div align="center">
   
 <!-- REPO_1_START -->
-[![edgeaiot](https://github-readme-stats.vercel.app/api/pin/?username=edgeaiot&repo=edgeaiot&theme=dark&hide_border=true)](https://github.com/edgeaiot/edgeaiot)
+[![edgeaiot](https://github-readme-stats.vercel.app/api/pin/?username=edgeaiot&repo=edgeaiot&theme=dark&hide_border=true&cache_seconds=86400&v=20251223)](https://github.com/edgeaiot/edgeaiot)
 <!-- REPO_1_END -->
   
 <!-- REPO_2_START -->
-[![esp32--CAM-Arduino-IDE](https://github-readme-stats.vercel.app/api/pin/?username=edgeaiot&repo=esp32--CAM-Arduino-IDE&theme=dark&hide_border=true)](https://github.com/edgeaiot/esp32--CAM-Arduino-IDE)
+[![esp32--CAM-Arduino-IDE](https://github-readme-stats.vercel.app/api/pin/?username=edgeaiot&repo=esp32--CAM-Arduino-IDE&theme=dark&hide_border=true&cache_seconds=86400&v=20251223)](https://github.com/edgeaiot/esp32--CAM-Arduino-IDE)
 <!-- REPO_2_END -->
   
 <!-- REPO_3_START -->
-[![esp_ble](https://github-readme-stats.vercel.app/api/pin/?username=edgeaiot&repo=esp_ble&theme=dark&hide_border=true)](https://github.com/edgeaiot/esp_ble)
+[![esp_ble](https://github-readme-stats.vercel.app/api/pin/?username=edgeaiot&repo=esp_ble&theme=dark&hide_border=true&cache_seconds=86400&v=20251223)](https://github.com/edgeaiot/esp_ble)
 <!-- REPO_3_END -->
 
 </div>
@@ -71,15 +71,15 @@ Specialized firmware engineering from low-level bare-metal code to RTOS-based ap
 <div align="center">
   
 <!-- REPO_4_START -->
-[![alert-system](https://github-readme-stats.vercel.app/api/pin/?username=edgeaiot&repo=alert-system&theme=dark&hide_border=true)](https://github.com/edgeaiot/alert-system)
+[![alert-system](https://github-readme-stats.vercel.app/api/pin/?username=edgeaiot&repo=alert-system&theme=dark&hide_border=true&cache_seconds=86400&v=20251223)](https://github.com/edgeaiot/alert-system)
 <!-- REPO_4_END -->
   
 <!-- REPO_5_START -->
-[![edge-ai-iot-tool](https://github-readme-stats.vercel.app/api/pin/?username=edgeaiot&repo=edge-ai-iot-tool&theme=dark&hide_border=true)](https://github.com/edgeaiot/edge-ai-iot-tool)
+[![stm32f103-easy-setup](https://github-readme-stats.vercel.app/api/pin/?username=edgeaiot&repo=stm32f103-easy-setup&theme=dark&hide_border=true&cache_seconds=86400&v=20251223)](https://github.com/edgeaiot/stm32f103-easy-setup)
 <!-- REPO_5_END -->
   
 <!-- REPO_6_START -->
-[![Repo Name](https://github-readme-stats.vercel.app/api/pin/?username=YOUR_USERNAME&repo=REPO_NAME&theme=dark&hide_border=true)](https://github.com/YOUR_USERNAME/REPO_NAME)
+[![edge-ai-iot-tool](https://github-readme-stats.vercel.app/api/pin/?username=edgeaiot&repo=edge-ai-iot-tool&theme=dark&hide_border=true&cache_seconds=86400&v=20251223)](https://github.com/edgeaiot/edge-ai-iot-tool)
 <!-- REPO_6_END -->
 
 </div>
