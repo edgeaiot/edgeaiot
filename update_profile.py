@@ -4,7 +4,6 @@ import os
 import re
 from typing import List, Dict
 from datetime import datetime
-from urllib.parse import quote
 
 # Get token from environment (GitHub Actions provides GITHUB_TOKEN automatically)
 GITHUB_TOKEN = os.getenv('GITHUB_TOKEN')
@@ -61,17 +60,28 @@ def get_top_starred_repos(username: str = None, limit: int = 6) -> List[Dict]:
 
 
 def update_readme(repos: List[Dict], readme_file: str = 'README.md'):
-    """Update README.md with top starred repositories."""
+    """Update README.md or profile.md with top starred repositories."""
     if not repos:
         print("No repositories to update")
         return False
     
-    # Read current README.md
-    try:
-        with open(readme_file, 'r', encoding='utf-8') as f:
-            content = f.read()
-    except FileNotFoundError:
-        print(f"Error: {readme_file} not found")
+    # Try to find file with markers - check README.md first, then profile.md
+    target_file = None
+    for candidate_file in [readme_file, 'profile.md']:
+        try:
+            with open(candidate_file, 'r', encoding='utf-8') as f:
+                test_content = f.read()
+                # Check if file has at least one REPO marker
+                if '<!-- REPO_1_START -->' in test_content:
+                    target_file = candidate_file
+                    content = test_content
+                    print(f"Found markers in {candidate_file}")
+                    break
+        except FileNotFoundError:
+            continue
+    
+    if not target_file:
+        print(f"Error: Neither {readme_file} nor profile.md contains REPO markers")
         return False
     
     # Extract username from first repo
@@ -93,45 +103,43 @@ def update_readme(repos: List[Dict], readme_file: str = 'README.md'):
             print(f"Warning: Skipping REPO_{i} - missing name or URL")
             continue
         
-        # URL encode username and repo name to handle special characters properly
-        # GitHub usernames/repos don't have spaces, but may have hyphens/underscores
-        encoded_username = quote(username, safe='')
-        encoded_repo_name = quote(repo_name, safe='')
-        
-        # Create GitHub Stats API card URL with proper encoding
-        # Using v parameter for cache busting to ensure fresh images
-        stats_url = f'https://github-readme-stats.vercel.app/api/pin/?username={encoded_username}&repo={encoded_repo_name}&theme=dark&hide_border=true&v={cache_date}'
+        # GitHub Stats API expects unencoded usernames and repo names
+        # Only encode if there are special characters that need it (spaces, etc.)
+        # Most GitHub usernames/repos are safe without encoding
+        # Create GitHub Stats API card URL
+        # Using show_owner=false to show repo name instead of username/repo format
+        stats_url = f'https://github-readme-stats.vercel.app/api/pin/?username={username}&repo={repo_name}&theme=dark&hide_border=true'
         
         # Create the markdown card with proper alt text (escape special chars in alt text)
         alt_text = repo_name.replace('[', '\\[').replace(']', '\\]')
         card = f'[![{alt_text}]({stats_url})]({repo_url})'
         
         # Use regex to find and replace between the comment markers
-        # Pattern matches any markdown image link between START and END markers
-        # Handles various whitespace scenarios
-        pattern = rf'(<!-- REPO_{i}_START -->)\s*\[!\[.*?\]\(.*?\)\]\(.*?\)\s*(<!-- REPO_{i}_END -->)'
+        # Pattern matches: START marker, whitespace/newlines, markdown card, whitespace/newlines, END marker
+        # Uses [\s\S] to match any character including newlines (more reliable than . with DOTALL)
+        pattern = rf'(<!-- REPO_{i}_START -->)[\s\S]*?\[!\[.*?\]\(.*?\)\]\(.*?\)[\s\S]*?(<!-- REPO_{i}_END -->)'
         replacement = rf'\1\n{card}\n\2'
-        new_content = re.sub(pattern, replacement, content, flags=re.DOTALL)
+        new_content = re.sub(pattern, replacement, content)
         
         if new_content != content:
             content = new_content
             updated = True
             print(f"✅ Updated REPO_{i}: {repo_name}")
         else:
-            print(f"⚠️  No match found for REPO_{i} markers in README.md")
+            print(f"⚠️  No match found for REPO_{i} markers in {target_file}")
     
     # Write updated content
     if updated:
         try:
-            with open(readme_file, 'w', encoding='utf-8') as f:
+            with open(target_file, 'w', encoding='utf-8') as f:
                 f.write(content)
-            print(f"✅ Successfully updated {readme_file}")
+            print(f"✅ Successfully updated {target_file}")
             return True
         except Exception as e:
-            print(f"Error writing to {readme_file}: {e}")
+            print(f"Error writing to {target_file}: {e}")
             return False
     else:
-        print("No changes detected in README.md")
+        print(f"No changes detected in {target_file}")
         return False
 
 
