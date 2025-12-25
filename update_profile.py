@@ -9,6 +9,9 @@ from datetime import datetime
 GITHUB_TOKEN = os.getenv('GITHUB_TOKEN')
 GITHUB_API_BASE = 'https://api.github.com'
 
+# GitHub Stats API - using public service
+GITHUB_STATS_API_BASE = 'https://github-readme-stats.vercel.app'
+
 
 def get_top_starred_repos(username: str = None, limit: int = 6) -> List[Dict]:
     """Fetch top starred repositories for a user."""
@@ -103,12 +106,10 @@ def update_readme(repos: List[Dict], readme_file: str = 'README.md'):
             print(f"Warning: Skipping REPO_{i} - missing name or URL")
             continue
         
-        # GitHub Stats API expects unencoded usernames and repo names
-        # Only encode if there are special characters that need it (spaces, etc.)
-        # Most GitHub usernames/repos are safe without encoding
-        # Create GitHub Stats API card URL
-        # Using show_owner=false to show repo name instead of username/repo format
-        stats_url = f'https://github-readme-stats.vercel.app/api/pin/?username={username}&repo={repo_name}&theme=dark&hide_border=true'
+        # GitHub Stats API - public service
+        # Ensure username and repo_name don't have spaces or special encoding issues
+        # The API expects plain usernames and repo names in the URL
+        stats_url = f'{GITHUB_STATS_API_BASE}/api/pin/?username={username}&repo={repo_name}&theme=dark&hide_border=true'
         
         # Create the markdown card with proper alt text (escape special chars in alt text)
         alt_text = repo_name.replace('[', '\\[').replace(']', '\\]')
