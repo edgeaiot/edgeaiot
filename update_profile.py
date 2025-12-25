@@ -4,6 +4,7 @@ import os
 import re
 from typing import List, Dict
 from datetime import datetime
+from urllib.parse import quote
 
 # Get token from environment (GitHub Actions provides GITHUB_TOKEN automatically)
 GITHUB_TOKEN = os.getenv('GITHUB_TOKEN')
@@ -75,6 +76,9 @@ def update_readme(repos: List[Dict], readme_file: str = 'README.md'):
     
     # Extract username from first repo
     username = repos[0].get('owner', {}).get('login', 'YOUR_USERNAME')
+    if not username or username == 'YOUR_USERNAME':
+        print(f"Error: Invalid username extracted from repos")
+        return False
     
     # Get current date for cache busting (changes daily to force refresh)
     cache_date = datetime.now().strftime('%Y%m%d')  # Format: YYYYMMDD
@@ -85,17 +89,36 @@ def update_readme(repos: List[Dict], readme_file: str = 'README.md'):
         repo_name = repo.get('name', '')
         repo_url = repo.get('html_url', '')
         
-        # Create GitHub Stats API card with 1-day cache (86400 seconds)
-        # v parameter forces refresh daily when date changes
-        card = f'[![{repo_name}](https://github-readme-stats.vercel.app/api/pin/?username={username}&repo={repo_name}&theme=dark&hide_border=true&cache_seconds=86400&v={cache_date})]({repo_url})'
+        if not repo_name or not repo_url:
+            print(f"Warning: Skipping REPO_{i} - missing name or URL")
+            continue
+        
+        # URL encode username and repo name to handle special characters properly
+        # GitHub usernames/repos don't have spaces, but may have hyphens/underscores
+        encoded_username = quote(username, safe='')
+        encoded_repo_name = quote(repo_name, safe='')
+        
+        # Create GitHub Stats API card URL with proper encoding
+        # Using v parameter for cache busting to ensure fresh images
+        stats_url = f'https://github-readme-stats.vercel.app/api/pin/?username={encoded_username}&repo={encoded_repo_name}&theme=dark&hide_border=true&v={cache_date}'
+        
+        # Create the markdown card with proper alt text (escape special chars in alt text)
+        alt_text = repo_name.replace('[', '\\[').replace(']', '\\]')
+        card = f'[![{alt_text}]({stats_url})]({repo_url})'
         
         # Use regex to find and replace between the comment markers
-        pattern = rf'(<!-- REPO_{i}_START -->\s*)\[!\[.*?\]\(.*?\)\]\(.*?\)(\s*<!-- REPO_{i}_END -->)'
-        new_content = re.sub(pattern, rf'\1{card}\2', content, flags=re.DOTALL)
+        # Pattern matches any markdown image link between START and END markers
+        # Handles various whitespace scenarios
+        pattern = rf'(<!-- REPO_{i}_START -->)\s*\[!\[.*?\]\(.*?\)\]\(.*?\)\s*(<!-- REPO_{i}_END -->)'
+        replacement = rf'\1\n{card}\n\2'
+        new_content = re.sub(pattern, replacement, content, flags=re.DOTALL)
         
         if new_content != content:
             content = new_content
             updated = True
+            print(f"✅ Updated REPO_{i}: {repo_name}")
+        else:
+            print(f"⚠️  No match found for REPO_{i} markers in README.md")
     
     # Write updated content
     if updated:
